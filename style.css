@@ -1,0 +1,86 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#subscribe-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+}
+
+button {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    background: #ffcc00;
+    color: black;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffd633;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
