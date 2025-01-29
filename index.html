@@ -53,15 +53,19 @@
         document.getElementById("subscribe-form").addEventListener("submit", function(e) {
             e.preventDefault(); // Prevent default form submission
 
-            let formData = new FormData(this);
+            let form = this;
+            let formData = new FormData(form);
 
-            fetch("contact.php", {
+            fetch("subscribe.php", {
                 method: "POST",
                 body: formData
             })
             .then(response => response.json())
             .then(data => {
                 document.getElementById("response-message").textContent = data.message;
+                if (data.status === "success") {
+                    form.reset(); // Clear the form after successful submission
+                }
             })
             .catch(error => {
                 document.getElementById("response-message").textContent = "An error occurred. Please try again.";
@@ -69,6 +73,7 @@
             });
         });
     </script>
+
 
 </body>
 </html>
