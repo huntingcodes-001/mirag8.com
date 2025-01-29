@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $file = "subscribers.txt";
-    $entry = $email . "\n";
+    $entry = "Email: " . $email . "\n\n";
 
     if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX)) {
         echo json_encode(["status" => "success", "message" => "Subscription successful!"]);
