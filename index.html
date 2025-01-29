@@ -24,14 +24,15 @@
 
         <p>📩 Subscribe for updates:</p>
         <form id="subscribe-form">
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
             <button type="submit">Notify Me</button>
         </form>
+        <p id="response-message"></p>
     </div>
 
     <script>
         // Countdown Timer Script
-        const targetDate = new Date("March 1, 2025 00:00:00").getTime();
+        const targetDate = new Date("February 5, 2025 00:00:00").getTime();
         
         function updateCountdown() {
             const now = new Date().getTime();
@@ -46,6 +47,27 @@
         }
         setInterval(updateCountdown, 1000);
         updateCountdown();
+    </script>
+
+    <script>
+        document.getElementById("subscribe-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            let formData = new FormData(this);
+
+            fetch("contact.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response-message").textContent = data.message;
+            })
+            .catch(error => {
+                document.getElementById("response-message").textContent = "An error occurred. Please try again.";
+                console.error("Error:", error);
+            });
+        });
     </script>
 
 </body>
