@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Slider customization */
+.slick-dots li button:before {
+  color: #2563eb !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #2563eb !important;
+}
+
+/* Form focus styles */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
